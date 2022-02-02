@@ -28,11 +28,19 @@ for (let i = 0; i < buttons.length; i++) {
                     a += content;
                     c = false
                 }
+                if (d == true) {
+                    if (content != "<-") {
+                        a = ""
+                        a += content;
+                        d = false
+                    }
+                }
                 if (content == "<-") {
                     if (a.replace("<-", "").length > 1) {
                         a = a.substring(0, a.replace("<-", "").length - 1);
                     } else if (a.replace("<-", "").length == 1) {
                         a = "0"
+                        d = true
                     }
                 }
             } else {
@@ -48,11 +56,6 @@ for (let i = 0; i < buttons.length; i++) {
             a = "0"
             c = true
         }
-        // if (b == true) {
-        //     a = ""
-        //     a += content;
-        //     b = false
-        // }
         updateh1();
     })
 }
